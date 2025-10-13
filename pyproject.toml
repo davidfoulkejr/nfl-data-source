@@ -1,0 +1,11 @@
+[project]
+name = "nfl-data-source"
+version = "0.1.0"
+description = "Maintain latest data set for NFL PowerBI project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "requests>=2.32.5",
+]
