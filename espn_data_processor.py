@@ -121,16 +121,16 @@ class ESPNDataProcessor:
                     'league_uid': league.get('uid'),
                     'name': league.get('name'),
                     'abbreviation': league.get('abbreviation'),
-                    'slug': league.get('slug'),
-                    'season_year': league.get('season', {}).get('year'),
-                    'season_start_date': league.get('season', {}).get('startDate'),
-                    'season_end_date': league.get('season', {}).get('endDate'),
-                    'season_display_name': league.get('season', {}).get('displayName'),
-                    'season_type_id': league.get('season', {}).get('type', {}).get('id'),
-                    'season_type_name': league.get('season', {}).get('type', {}).get('name'),
-                    'calendar_type': league.get('calendarType'),
-                    'calendar_start_date': league.get('calendarStartDate'),
-                    'calendar_end_date': league.get('calendarEndDate')
+                    'slug': league.get('slug')
+                    # 'season_year': league.get('season', {}).get('year'),
+                    # 'season_start_date': league.get('season', {}).get('startDate'),
+                    # 'season_end_date': league.get('season', {}).get('endDate'),
+                    # 'season_display_name': league.get('season', {}).get('displayName'),
+                    # 'season_type_id': league.get('season', {}).get('type', {}).get('id'),
+                    # 'season_type_name': league.get('season', {}).get('type', {}).get('name'),
+                    # 'calendar_type': league.get('calendarType'),
+                    # 'calendar_start_date': league.get('calendarStartDate'),
+                    # 'calendar_end_date': league.get('calendarEndDate')
                 }
                 self.leagues.append(league_record)
         

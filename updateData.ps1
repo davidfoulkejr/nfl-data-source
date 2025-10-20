@@ -1,0 +1,1 @@
+uv run ./refresh_espn_data.py
