@@ -17,6 +17,19 @@ erDiagram
         string calendar_end_date
     }
 
+    CONFERENCES {
+        int conference_id PK
+        string name
+        string abbreviation
+        int league_id FK
+    }
+
+    DIVISIONS {
+        int division_id PK
+        string name
+        int conference_id FK
+    }
+
     TEAMS {
         string team_id PK
         string team_uid
@@ -30,6 +43,11 @@ erDiagram
         boolean is_active
         string venue_id FK
         string logo_url
+    }
+
+    TEAM_DIVISIONS {
+        int team_id FK
+        int division_id FK
     }
 
     VENUES {
@@ -131,6 +149,10 @@ erDiagram
     }
 
     %% Relationships
+    LEAGUES ||--o{ CONFERENCES : "has"
+    CONFERENCES ||--o{ DIVISIONS : "contains"
+    DIVISIONS ||--o{ TEAM_DIVISIONS : "has"
+    TEAMS ||--o{ TEAM_DIVISIONS : "belongs to"
     TEAMS ||--o{ VENUES : "plays at"
     PLAYERS }o--|| TEAMS : "belongs to"
     PLAYERS }o--|| POSITIONS : "has position"
@@ -168,6 +190,9 @@ This diagram shows the relationships between all tables in the normalized ESPN N
 
 ### Team Structure
 
+- **CONFERENCES** (1) → (N) **DIVISIONS**: Each conference has 4 divisions
+- **DIVISIONS** (1) → (N) **TEAM_DIVISIONS**: Each division has 4 teams
+- **TEAMS** (1) → (1) **TEAM_DIVISIONS**: Each team belongs to one division
 - **TEAMS** (N) → (1) **VENUES**: Teams have home venues
 - **PLAYERS** (N) → (1) **TEAMS**: Players belong to teams
 - **PLAYERS** (N) → (1) **POSITIONS**: Players have positions
@@ -188,7 +213,7 @@ This diagram shows the relationships between all tables in the normalized ESPN N
 
 ### Dimension Tables (Lookup)
 
-- LEAGUES, TEAMS, VENUES, PLAYERS, POSITIONS, GAME_STATUS_TYPES
+- LEAGUES, CONFERENCES, DIVISIONS, TEAMS, TEAM_DIVISIONS, VENUES, PLAYERS, POSITIONS, GAME_STATUS_TYPES
 
 ### Fact Tables (Transactions)
 

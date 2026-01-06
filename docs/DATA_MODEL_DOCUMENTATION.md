@@ -7,7 +7,7 @@ This document describes the normalized data model created from ESPN NFL API JSON
 ## Data Processing Summary
 
 - **Source**: ESPN NFL API JSON response (26,148 lines)
-- **Output**: 12 normalized CSV files
+- **Output**: 15 normalized CSV files
 - **Processing Date**: October 8, 2025
 - **Season Data**: 2025 NFL Season
 
@@ -18,7 +18,10 @@ This document describes the normalized data model created from ESPN NFL API JSON
 | File                    | Records | Description                          |
 | ----------------------- | ------- | ------------------------------------ |
 | `leagues.csv`           | 1       | League information (NFL)             |
+| `conferences.csv`       | 2       | NFL conferences (AFC, NFC)           |
+| `divisions.csv`         | 8       | NFL divisions                        |
 | `teams.csv`             | 28      | NFL team details                     |
+| `team_divisions.csv`    | 32      | Team to division mapping             |
 | `venues.csv`            | 13      | Stadium/venue information            |
 | `players.csv`           | 81      | Player information from game leaders |
 | `positions.csv`         | 4       | Player position types                |
@@ -79,6 +82,39 @@ Columns:
 - is_active: Whether team is active
 - venue_id (FK): References venues.venue_id
 - logo_url: Team logo URL
+```
+
+#### conferences.csv
+
+NFL conference reference table (hard-coded).
+
+```
+Columns:
+- conference_id (PK): Unique conference identifier (1=AFC, 2=NFC)
+- name: Full conference name
+- abbreviation: Conference abbreviation (AFC, NFC)
+- league_id (FK): References leagues.league_id
+```
+
+#### divisions.csv
+
+NFL division reference table (hard-coded).
+
+```
+Columns:
+- division_id (PK): Unique division identifier (1-8)
+- name: Full division name (e.g., "AFC East")
+- conference_id (FK): References conferences.conference_id
+```
+
+#### team_divisions.csv
+
+Team to division mapping table (hard-coded).
+
+```
+Columns:
+- team_id (FK): References teams.team_id
+- division_id (FK): References divisions.division_id
 ```
 
 #### venues.csv
