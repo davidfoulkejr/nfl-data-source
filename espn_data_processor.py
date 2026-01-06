@@ -99,40 +99,40 @@ class ESPNDataProcessor:
         ]
         
         # Team to Division mapping (team_id -> division_id)
-        # Based on ESPN team IDs
+        # Based on ESPN team IDs from teams.csv
         self.team_divisions = [
-            {'team_id': 1, 'division_id': 8},   # Arizona Cardinals - NFC West
-            {'team_id': 2, 'division_id': 7},   # Atlanta Falcons - NFC South
-            {'team_id': 3, 'division_id': 2},   # Baltimore Ravens - AFC North
-            {'team_id': 4, 'division_id': 1},   # Buffalo Bills - AFC East
-            {'team_id': 5, 'division_id': 7},   # Carolina Panthers - NFC South
-            {'team_id': 6, 'division_id': 6},   # Chicago Bears - NFC North
-            {'team_id': 7, 'division_id': 2},   # Cincinnati Bengals - AFC North
-            {'team_id': 8, 'division_id': 2},   # Cleveland Browns - AFC North
-            {'team_id': 9, 'division_id': 5},   # Dallas Cowboys - NFC East
-            {'team_id': 10, 'division_id': 4},  # Denver Broncos - AFC West
-            {'team_id': 11, 'division_id': 6},  # Detroit Lions - NFC North
-            {'team_id': 12, 'division_id': 6},  # Green Bay Packers - NFC North
-            {'team_id': 13, 'division_id': 3},  # Houston Texans - AFC South
-            {'team_id': 14, 'division_id': 3},  # Indianapolis Colts - AFC South
-            {'team_id': 15, 'division_id': 3},  # Jacksonville Jaguars - AFC South
-            {'team_id': 16, 'division_id': 4},  # Kansas City Chiefs - AFC West
-            {'team_id': 17, 'division_id': 1},  # Miami Dolphins - AFC East
-            {'team_id': 18, 'division_id': 6},  # Minnesota Vikings - NFC North
-            {'team_id': 19, 'division_id': 1},  # New England Patriots - AFC East
-            {'team_id': 20, 'division_id': 7},  # New Orleans Saints - NFC South
-            {'team_id': 21, 'division_id': 5},  # New York Giants - NFC East
-            {'team_id': 22, 'division_id': 1},  # New York Jets - AFC East
-            {'team_id': 23, 'division_id': 4},  # Las Vegas Raiders - AFC West
-            {'team_id': 24, 'division_id': 5},  # Philadelphia Eagles - NFC East
-            {'team_id': 25, 'division_id': 2},  # Pittsburgh Steelers - AFC North
-            {'team_id': 26, 'division_id': 4},  # Los Angeles Chargers - AFC West
-            {'team_id': 27, 'division_id': 8},  # San Francisco 49ers - NFC West
-            {'team_id': 28, 'division_id': 8},  # Seattle Seahawks - NFC West
-            {'team_id': 29, 'division_id': 8},  # Los Angeles Rams - NFC West
-            {'team_id': 30, 'division_id': 7},  # Tampa Bay Buccaneers - NFC South
-            {'team_id': 31, 'division_id': 3},  # Tennessee Titans - AFC South
-            {'team_id': 32, 'division_id': 5}   # Washington Commanders - NFC East
+            {'team_id': 1, 'division_id': 7},   # Atlanta Falcons - NFC South
+            {'team_id': 2, 'division_id': 1},   # Buffalo Bills - AFC East
+            {'team_id': 3, 'division_id': 6},   # Chicago Bears - NFC North
+            {'team_id': 4, 'division_id': 2},   # Cincinnati Bengals - AFC North
+            {'team_id': 5, 'division_id': 2},   # Cleveland Browns - AFC North
+            {'team_id': 6, 'division_id': 5},   # Dallas Cowboys - NFC East
+            {'team_id': 7, 'division_id': 4},   # Denver Broncos - AFC West
+            {'team_id': 8, 'division_id': 6},   # Detroit Lions - NFC North
+            {'team_id': 9, 'division_id': 6},   # Green Bay Packers - NFC North
+            {'team_id': 10, 'division_id': 3},  # Tennessee Titans - AFC South
+            {'team_id': 11, 'division_id': 3},  # Indianapolis Colts - AFC South
+            {'team_id': 12, 'division_id': 4},  # Kansas City Chiefs - AFC West
+            {'team_id': 13, 'division_id': 4},  # Las Vegas Raiders - AFC West
+            {'team_id': 14, 'division_id': 8},  # Los Angeles Rams - NFC West
+            {'team_id': 15, 'division_id': 1},  # Miami Dolphins - AFC East
+            {'team_id': 16, 'division_id': 6},  # Minnesota Vikings - NFC North
+            {'team_id': 17, 'division_id': 1},  # New England Patriots - AFC East
+            {'team_id': 18, 'division_id': 7},  # New Orleans Saints - NFC South
+            {'team_id': 19, 'division_id': 5},  # New York Giants - NFC East
+            {'team_id': 20, 'division_id': 1},  # New York Jets - AFC East
+            {'team_id': 21, 'division_id': 5},  # Philadelphia Eagles - NFC East
+            {'team_id': 22, 'division_id': 8},  # Arizona Cardinals - NFC West
+            {'team_id': 23, 'division_id': 2},  # Pittsburgh Steelers - AFC North
+            {'team_id': 24, 'division_id': 4},  # Los Angeles Chargers - AFC West
+            {'team_id': 25, 'division_id': 8},  # San Francisco 49ers - NFC West
+            {'team_id': 26, 'division_id': 8},  # Seattle Seahawks - NFC West
+            {'team_id': 27, 'division_id': 7},  # Tampa Bay Buccaneers - NFC South
+            {'team_id': 28, 'division_id': 5},  # Washington Commanders - NFC East
+            {'team_id': 29, 'division_id': 7},  # Carolina Panthers - NFC South
+            {'team_id': 30, 'division_id': 3},  # Jacksonville Jaguars - AFC South
+            {'team_id': 33, 'division_id': 2},  # Baltimore Ravens - AFC North
+            {'team_id': 34, 'division_id': 3}   # Houston Texans - AFC South
         ]
         
         print("✓ NFL conference and division structure initialized")
